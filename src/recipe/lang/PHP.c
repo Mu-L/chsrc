@@ -11,18 +11,18 @@ pl_php_prelude ()
 
   chef_set_created_on   (this, "2023-08-30");
   chef_set_last_updated (this, "2025-08-10");
-  chef_set_sources_last_updated (this, "2024-09-14");
+  chef_set_sources_last_updated (this, "2025-08-24");
 
   chef_set_chef (this, NULL);
   chef_set_cooks (this, 1, "@ccmywish");
-  chef_set_sauciers (this, 0);
+  chef_set_sauciers (this, 1, "@hezonglun");
 
   chef_allow_local_mode (this, FullyCan, NULL, NULL);
   chef_forbid_english(this);
   chef_allow_user_define(this);
 
   def_sources_begin()
-  {&UpstreamProvider,  NULL, DelegateToUpstream},
+  {&UpstreamProvider, "https://packagist.org/", DelegateToUpstream},
   {&Ali,              "https://mirrors.aliyun.com/composer/",     DelegateToMirror},
   {&Tencent,          "https://mirrors.tencent.com/composer/",    DelegateToMirror},
   // {&Tencent_Intra, "https://mirrors.tencentyun.com/composer/", DelegateToMirror},
